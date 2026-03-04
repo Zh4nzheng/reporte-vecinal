@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Reporte</title>
+        <link rel="stylesheet" href="css/styles.css">
+        <meta name="viewport" content="width=devise-width, initial-scale=1.0">
+    </head>
+    <body>
+        <header>
+            <h1>Crear Reporte</h1>
+        </header>
+
+        <nav aria-label="Navegación Principal">
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="reporte.html"  class="active">Crear Reporte>>></a></li>
+            </ul>
+            
+        </nav>
+
+        <main>
+            <form action="" method="post">
+                <label for="nombre">Ingrese su nombre:</label>
+                <input type="text" placeholder="Ingresa nombre" name="nombre" id="nombre" required>
+
+                <label for="problema">Tipo de problema:</label>
+                <select name="problema" id="problema" required>
+                    <option value="" disabled selected>Selecciona una opción</option>
+                    <option value="Basura">Basura</option>
+                    <option value="Alumbrado">Alumbrado</option>
+                    <option value="Seguridad">Seguridad</option>
+                    <option value="Otro">Otro</option>
+                </select>
+
+                <p>Puedes subir una foto para ayudar a identificar el problema.</p>
+                <label for="foto">Foto del reporte: </label>
+                <input type="file" id="foto" name="foto" accept="image/*">
+
+                <label for="descripción">Descripción:</label>
+                <textarea name="descripción" id="descripción" rows="4" cols="40" required></textarea>
+
+                <label>
+                    <input type="checkbox" required>
+                    Confirmo que la información es correcta
+                </label>
+
+                <input type="submit" value="Enviar">
+            </form>
+        </main>
+        <footer>
+            <p>Versión 1.1 - © 2026 Kevin</p>
+        </footer>
+    </body>
+</html>

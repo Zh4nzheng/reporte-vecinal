@@ -1,6 +1,7 @@
 # Reporte Vecinal
 
 Proyecto web desarrollado con HTML y CSS.
+Practicas de perfil y formulario.
 
 ## Funcionalidades
 - Página de perfil

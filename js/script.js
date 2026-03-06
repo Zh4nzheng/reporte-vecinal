@@ -3,11 +3,19 @@ formulario.addEventListener("submit", function(event){
 
     event.preventDefault();
 
-    const nombre = document.querySelector("#nombre").value;
-    const problema = document.querySelector("#problema").value;
+    const nombre = document.getElementById("nombre").value;
+    const problema = document.getElementById("problema").value;
 
-    console.log(nombre);
-    console.log(problema);
-    
+    const lista = document.getElementById("listaReportes");
+
+    const nuevoReporte = document.createElement("p");
+
+    nuevoReporte.textContent = nombre + ": "+ problema;
+
+    lista.appendChild(nuevoReporte);
+
     alert("Reporte enviado correctamente");
+
+    formulario.reset();
+    document.getElementById("nombre").focus();
 })

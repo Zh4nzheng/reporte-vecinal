@@ -1,7 +1,7 @@
 # Reporte Vecinal
 
 Proyecto web desarrollado con HTML y CSS.
-Practicas de perfil y formulario.
+Aplicación web para registrar reportes ciudadanos.
 
 ## Funcionalidades
 - Página de perfil
@@ -13,4 +13,8 @@ Practicas de perfil y formulario.
 - HTML5
 - CSS3
 - Flexbox
-- Media Queries
+- JavaScript
+
+## Vista del proyecto
+
+![Vista del proyecto](img/demo.jpg)

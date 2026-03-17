@@ -1,17 +1,19 @@
 let reportes = [];
 
+// Cargar datos del localStorage
 const datosGuardados = localStorage.getItem("reportes");
 
 if(datosGuardados){
     reportes = JSON.parse(datosGuardados);
 }
 
-const lista = document.getElementById("listaReportes");
+//const lista = document.getElementById("listaReportes");
 
-reportes.forEach(function(reporte){
+// Función para crear y mostrar reportes
+function crearReporte(reporte){
+    const lista = document.getElementById("listaReportes");
 
     const nuevoReporte = document.createElement("li");
-
     nuevoReporte.textContent = reporte.nombre + ": " + reporte.problema;
 
     const botónEliminar = document.createElement("button");
@@ -23,17 +25,22 @@ reportes.forEach(function(reporte){
         nuevoReporte.remove();
 
         reportes = reportes.filter(function(r){
-            return !(r.nombre === reporte.nombre && r.problema === reporte.problema);
+            return !(r.id == reporte.id);
         });
 
         localStorage.setItem("reportes", JSON.stringify(reportes));
     });
 
     nuevoReporte.appendChild(botónEliminar);
-
     lista.appendChild(nuevoReporte);
+};
+
+// Mostrar reportes guardados al cargar la página
+reportes.forEach(function (reporte){
+    crearReporte(reporte);
 });
 
+// Capturar formulario
 const formulario = document.querySelector("form");
 formulario.addEventListener("submit", function(event){
     
@@ -41,23 +48,28 @@ formulario.addEventListener("submit", function(event){
 
     const nombre = document.getElementById("nombre").value;
     const problema = document.getElementById("problema").value;
-
+    // Crear objeto con ID único
     const reporte ={
+        id: Date.now(),
         nombre: nombre,
         problema: problema
     };
-
+    // Guardar en array y localStorage
     reportes.push(reporte);
     localStorage.setItem("reportes", JSON.stringify(reportes));
 
-    const lista = document.getElementById("listaReportes");
+    // Mostrar en pantalla
+    crearReporte(reporte);
 
-    const nuevoReporte = document.createElement("li");
+    //const lista = document.getElementById("listaReportes");
 
-    nuevoReporte.textContent = nombre + ": "+ problema;
+    //const nuevoReporte = document.createElement("li");
 
-    lista.appendChild(nuevoReporte);
+    //nuevoReporte.textContent = nombre + ": "+ problema;
 
+    //lista.appendChild(nuevoReporte);
+
+    // Resetear formulario
     formulario.reset();
     document.getElementById("nombre").focus();
 })

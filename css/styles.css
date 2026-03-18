@@ -105,14 +105,21 @@ input[type="submit"] {
 input[type="submit"]:hover {
   background-color: #005fa3;
 }
+
 textarea{
   resize: vertical;
   min-height: 100px;
 }
+
 footer{
   text-align: center;
   padding: 15px;
   color: #666;
+}
+
+.resuelto{
+  text-decoration: line-through;
+  color: gray;
 }
 @media (max-width: 600px) {
 
